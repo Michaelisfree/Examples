@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Register Here</title>
+	<script>
+	function checkform(f){
+		var value1=f.password.value;
+		var value2=f.password2.value;
+		if (value1!=value2){
+          alert("两次密码不一致");
+          return false;
+		}
+		return true;
+	}
+	</script>
+</head>
+<body>
+{%if message%}
+<p style="color:red">{{message}}</p>
+{%endif%}
+	<form action="register"method="post"name="reg"onsubmit="return checkform(this)">
+		<p><input name="ID" placeholder="ID"></p>
+		<p><input name="account"placeholder="Account"></p>
+		<p><input name="password" placeholder="Password"></p>
+		<p><input name="password2" placeholder="再次输入密码"></p>
+		<button type="submit">Register Now!</button>
+	</form>
+</body>
+</html>
